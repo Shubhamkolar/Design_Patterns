@@ -1,0 +1,25 @@
+Singleton Pattern:
+- Single Instance: Only one instance of the class is created, regardless of how many times the class is referenced.
+- Global access: The single instance is accessed globally. 
+- Lazy Initialization: The instance is created only when it is needed, not at the time of class loading. Commonly used in cases where a
+  single point of control is needed, such as in managing resources like database connections or logging services.
+
+
+TYPES OF SINGLETON IMPLEMENTATIONS:
+1. Eager Initialization(Thread-Safe):
+   Pros: Simple, thread-safe.
+   Cons: Instance is created even if not used (wastes memory).
+
+2. Lazy Initialization (Not Thread-Safe):
+   Pros: Instance is created only when needed.
+   Cons: Not thread-safe in multithreaded environments.
+
+3. Thread-safe Singleton with synchronized:
+   Pros: Thread-safe.
+   Cons: Performance overhead due to synchronization.
+
+4. Double-Checked Locking (Efficient and Thread-safe):
+   Pros: Thread-safe + High Performance
+   Cons: Slightly complex. 
+   (Double-checked locking is used to reduce the overhead of acquiring a lock by first checking the condition without synchronization, and then
+    synchronizing only if the instance is null.)
